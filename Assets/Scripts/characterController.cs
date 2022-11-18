@@ -14,12 +14,13 @@ public class characterController : MonoBehaviour
     [SerializeField] private float dashForce;
     [SerializeField] private float dashCD;
     [SerializeField] private float TornadoCD;
-
+    [SerializeField] private GameObject escudo;
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        escudo.SetActive(false);
     }
     
     #region Dash Code : Aqui esta la lógica del Dash
@@ -53,6 +54,20 @@ public class characterController : MonoBehaviour
     {
         _animator.SetBool("CastTornado", false);
         
+    }
+
+    public IEnumerator StartShield()
+    {
+
+        _animator.SetBool("Shield", true);
+        escudo.SetActive(true);
+        yield return new WaitForSeconds(2);
+        escudo.SetActive(false);
+        _animator.SetBool("Shield", false);
+    }
+    public void ShieldCoroutine()
+    {
+        StartCoroutine(StartShield());
     }
 
 }

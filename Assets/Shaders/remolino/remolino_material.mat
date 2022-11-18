@@ -123,7 +123,7 @@ Material:
     - _noisePower: 1
     - _noiseScale: 20
     - _twirlAmount: 4.76
-    - dissolve: 0.9862543
+    - dissolve: 0.8375009
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 4.867144, g: 0, b: 4.382978, a: 0.5803922}

@@ -13,6 +13,8 @@ public class characterController : MonoBehaviour
 
     [SerializeField] private float dashForce;
     [SerializeField] private float dashCD;
+    [SerializeField] private float TornadoCD;
+
 
     private void Start()
     {
@@ -41,6 +43,16 @@ public class characterController : MonoBehaviour
     #endregion
 
 
-
+    public void Tornado()
+    {
+        _animator.SetBool("CastTornado", true);
+       
+        Invoke("StopTornado", TornadoCD);
+    }
+    private void StopTornado()
+    {
+        _animator.SetBool("CastTornado", false);
+        
+    }
 
 }

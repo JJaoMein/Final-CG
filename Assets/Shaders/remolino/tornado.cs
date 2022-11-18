@@ -44,7 +44,7 @@ public class tornado : MonoBehaviour
         {
             desaparce = false;
         }
-        if (desaparce == true) { timer += Time.deltaTime / 64; }
+        if (desaparce == true) { timer += Time.deltaTime / 32; }
         else if (desaparce== false )
         {
             timer -= Time.deltaTime / 8;
